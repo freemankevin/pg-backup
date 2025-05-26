@@ -27,4 +27,4 @@ go.work.sum
 # local data
 ./backup
 vendor/
-.vscode/
+.vscode/.*
