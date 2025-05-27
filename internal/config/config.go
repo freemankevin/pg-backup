@@ -21,9 +21,9 @@ type DatabaseConfig struct {
 }
 
 type StorageConfig struct {
-	Type      string      `json:"type" binding:"required,oneof=local s3"` // "local" or "s3"
-	Local     LocalConfig `json:"local"`
-	S3        S3Config    `json:"s3"`
+	Type  string      `json:"type" binding:"required,oneof=local s3"` // "local" or "s3"
+	Local LocalConfig `json:"local"`
+	S3    S3Config    `json:"s3"`
 }
 
 type LocalConfig struct {
@@ -90,9 +90,9 @@ func loadDefaultConfig() *Config {
 		Database: DatabaseConfig{
 			Host:     "localhost",
 			Port:     5432,
-			Database: "myapp_production",
+			Database: "postgres",
 			Username: "postgres",
-			Password: "",
+			Password: "postgres",
 		},
 		Storage: StorageConfig{
 			Type: "local",
@@ -107,7 +107,7 @@ func loadDefaultConfig() *Config {
 			},
 		},
 		API: APIConfig{
-			Port: "8080",
+			Port: "8090",
 		},
 	}
 }

@@ -1,0 +1,23 @@
+database:
+  host: localhost
+  port: 5432
+  username: postgres
+  password: postgres
+  database: postgres
+  sslmode: disable
+
+storage:
+  type: local # 或 s3
+  local:
+    path: ./backups
+  s3:
+    region: us-west-2
+    bucket: your-bucket-name
+    prefix: backups/
+
+api:
+  port: "8090"
+
+# 可选：定时任务配置
+scheduler:
+  enabled: true
